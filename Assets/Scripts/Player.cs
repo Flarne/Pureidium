@@ -1,21 +1,63 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-	[Tooltip("In m / s -1")] [SerializeField] float xSpeed = 4f;
+	[Tooltip("In m / s -1")] [SerializeField] float speed = 40f;
+	[Tooltip("In m")] [SerializeField] float xRange = 20f;
+	[Tooltip("In m")] [SerializeField] float yRange = 12f;
 
-    void Start()
+	[SerializeField] float positionPitchFactor = -1.2f;
+	[SerializeField] float controlPitchFactor = -15f;
+	[SerializeField] float positionYawFactor = 1.7f;
+	[SerializeField] float controlRollFactor = -15f;
+
+	float xThrow;
+	float yThrow;
+	float zThrow;
+
+	void Start()
     {
         
     }
 	
     void Update()
-    {
-		float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-		float xOffsetThisFrame = xThrow * xSpeed * Time.deltaTime;
-		print(xOffsetThisFrame);
-    }
+	{
+		ProcessTranslation();
+		ProcessRotation();
+	}
+
+	private void ProcessRotation()
+	{
+		float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+		float pitchDueToControlThrow = yThrow * controlPitchFactor;
+
+		float yaw = transform.localPosition.x * positionYawFactor;
+
+		float roll = xThrow * controlRollFactor;
+
+		float pitch = pitchDueToPosition + pitchDueToControlThrow;
+		
+		transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+	}
+
+	private void ProcessTranslation()
+	{
+		xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+		yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+
+		float xOffset = xThrow * speed * Time.deltaTime;
+		float yOffset = yThrow * speed * Time.deltaTime;
+
+		float xRawPos = transform.localPosition.x + xOffset;
+		float yRawPos = transform.localPosition.y + yOffset;
+
+		float xMaxPos = Mathf.Clamp(xRawPos, -xRange, xRange);
+		float yMaxPos = Mathf.Clamp(yRawPos, -yRange, yRange);
+
+		transform.localPosition = new Vector3(xMaxPos, yMaxPos, transform.localPosition.z);
+	}
 }
