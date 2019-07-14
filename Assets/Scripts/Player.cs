@@ -23,8 +23,24 @@ public class Player : MonoBehaviour
     {
         
     }
-	
-    void Update()
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "EnemyShip")
+		{
+			print("You crashed into a enemy ship!!");
+		}
+		if (other.gameObject.tag == "Obstacle")
+		{
+			print("Player triggered a Obstacle");
+		}
+		if (other.gameObject.tag == "Terrain")
+		{
+			print("Player triggerde a terrain collider");
+		}
+	}
+
+	void Update()
 	{
 		ProcessTranslation();
 		ProcessRotation();
