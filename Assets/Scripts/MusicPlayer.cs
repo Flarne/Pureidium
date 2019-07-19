@@ -6,6 +6,7 @@ public class MusicPlayer : MonoBehaviour
 {
 	private void Awake()
 	{
+		// Singleton Pattern
 		int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
 		if (numMusicPlayers > 1)
 		{
@@ -15,5 +16,6 @@ public class MusicPlayer : MonoBehaviour
 		{
 			DontDestroyOnLoad(gameObject);
 		}
+		// Singleton Pattern ends
 	}
 }

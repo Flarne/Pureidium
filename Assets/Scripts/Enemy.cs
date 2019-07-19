@@ -1,23 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] GameObject enemyDeathFX;
+	[SerializeField] Transform parent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Start()
+	{
+		Collider colliderOnEnemy = gameObject.AddComponent<BoxCollider>();
+		colliderOnEnemy.isTrigger = false;
+	}
 
 	private void OnParticleCollision(GameObject other)
 	{
+		GameObject fx = Instantiate(enemyDeathFX, transform.position, Quaternion.identity);
+		fx.transform.parent = parent;
 		Destroy(gameObject);
 	}
 }
