@@ -6,10 +6,11 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
-	[Header ("Genral")]
+	[Header ("General")]
 	[Tooltip("In m / s -1")] [SerializeField] float controlSpeed = 20f;
 	[Tooltip("In m")] [SerializeField] float xRange = 18f;
 	[Tooltip("In m")] [SerializeField] float yRange = 15f;
+	[SerializeField] GameObject[] lasers;
 
 	[Header("Screen-Position Based")]
 	[SerializeField] float positionPitchFactor = -1f;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
 		{
 			ProcessTranslation();
 			ProcessRotation();
+			ProcessFiring();
 		}
 	}
 
@@ -68,5 +70,33 @@ public class PlayerController : MonoBehaviour
 		float yMaxPos = Mathf.Clamp(yRawPos, -yRange, yRange);
 
 		transform.localPosition = new Vector3(xMaxPos, yMaxPos, transform.localPosition.z);
+	}
+
+	void ProcessFiring()
+	{
+		if(CrossPlatformInputManager.GetButton("Fire"))
+		{
+			ActivateLasers();
+		}
+		else
+		{
+			DeactivateLasers();
+		}
+	}
+
+	private void ActivateLasers()
+	{
+		foreach (GameObject laser in lasers)
+		{
+			laser.SetActive(true);
+		}
+	}
+
+	private void DeactivateLasers()
+	{
+		foreach (GameObject laser in lasers)
+		{
+			laser.SetActive(false);
+		}
 	}
 }
