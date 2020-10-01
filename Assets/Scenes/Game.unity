@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -94,10 +94,12 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: c46cb3c005d870b4098ef24f9795ea14,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -117,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -297,6 +301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 102830988}
     m_Modifications:
+    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1664269169174470, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
       propertyPath: m_Name
       value: GoldenSpeeder
@@ -345,10 +353,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.016
       objectReference: {fileID: 0}
-    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
 --- !u!1 &188003822
@@ -501,6 +505,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -512,6 +518,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -524,6 +531,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &234438362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -589,8 +597,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348483923}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12.5
   m_Range: 75
@@ -648,6 +657,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675250919}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (3)
@@ -696,10 +709,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!95 &363155000 stripped
@@ -721,6 +730,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 629665962}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (2)
@@ -781,10 +794,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!1 &365718198 stripped
@@ -825,6 +834,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567055180}
     m_Modifications:
+    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1664269169174470, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
       propertyPath: m_Name
       value: GoldenSpeeder (2)
@@ -873,10 +886,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.6790004
       objectReference: {fileID: 0}
-    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
 --- !u!1 &394664855 stripped
@@ -921,6 +930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675250919}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (2)
@@ -969,10 +982,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!95 &443579768 stripped
@@ -1038,8 +1047,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548724167}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12.5
   m_Range: 75
@@ -1097,6 +1107,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 102830988}
     m_Modifications:
+    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1664269169174470, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
       propertyPath: m_Name
       value: GoldenSpeeder (1)
@@ -1157,10 +1171,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
 --- !u!1 &567055179
@@ -1485,8 +1495,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938684088}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12.5
   m_Range: 75
@@ -1582,8 +1593,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956107619}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 12.5
   m_Range: 75
@@ -1641,14 +1653,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 188003825}
     m_Modifications:
+    - target: {fileID: 394541343, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1510364872509504, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
       propertyPath: m_Name
       value: StarSparrow1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6035191103977005405, guid: f805c7b2f982faf43833878e4f22ae2a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4433942057210488, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1694,7 +1705,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 394541343, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+    - target: {fileID: 6035191103977005405, guid: f805c7b2f982faf43833878e4f22ae2a,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1763,7 +1775,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 960497890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -1780,7 +1792,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 960497890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -1910,6 +1922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 102830988}
     m_Modifications:
+    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1664269169174470, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
       propertyPath: m_Name
       value: GoldenSpeeder (2)
@@ -1970,10 +1986,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
 --- !u!4 &1027006438 stripped
@@ -2034,6 +2046,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2045,6 +2059,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2057,6 +2072,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1108116538
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2196,7 +2212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238330814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -2215,7 +2231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238330814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -2260,8 +2276,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281069551}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1.4
   m_Range: 10
@@ -2333,6 +2350,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 629665962}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (1)
@@ -2393,10 +2414,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!1 &1371560751 stripped
@@ -2467,7 +2484,7 @@ Terrain:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373724861}
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: d806bc11b4e13364185d0bfb14f1fd28, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
@@ -2483,18 +2500,14 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialType: 0
-  m_LegacySpecular:
-    serializedVersion: 2
-    rgba: 4286545791
-  m_LegacyShininess: 0.078125
-  m_MaterialTemplate: {fileID: 0}
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
   m_ScaleInLightmap: 0.0256
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
   m_GroupingID: 0
+  m_RenderingLayerMask: 1
   m_AllowAutoConnect: 1
 --- !u!4 &1373724864
 Transform:
@@ -2517,6 +2530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567055180}
     m_Modifications:
+    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1664269169174470, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
       propertyPath: m_Name
       value: GoldenSpeeder (3)
@@ -2565,10 +2582,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.6790004
       objectReference: {fileID: 0}
-    - target: {fileID: 1136537749, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a073d16030e9bb4ab4bab71c3124066, type: 3}
 --- !u!1 &1534954427
@@ -2610,6 +2623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675250919}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (1)
@@ -2658,10 +2675,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!95 &1571596181 stripped
@@ -2720,6 +2733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567055180}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack (2)
@@ -2768,10 +2785,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.083000004
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!4 &1784835757 stripped
@@ -2787,6 +2800,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675250919}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack
@@ -2835,10 +2852,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!1001 &1880475915
@@ -2848,6 +2861,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 629665962}
     m_Modifications:
+    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1959539179}
     - target: {fileID: 1405876428854690, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
       propertyPath: m_Name
       value: SilverAttack
@@ -2896,10 +2913,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.4450002
       objectReference: {fileID: 0}
-    - target: {fileID: 1986462855, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 1959539179}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e2965e034095b40b035c26bdecd5ed, type: 3}
 --- !u!95 &1947530599 stripped
@@ -2997,17 +3010,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2108184045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.7779869, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f832333b69c1c2744a2e5be93b8882b8, type: 3}
     m_FontSize: 60
@@ -3055,11 +3068,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1534954428}
     m_Modifications:
-    - target: {fileID: 1494602890906840478, guid: de9c5fbebd004b746bbeb57c27127cb9,
-        type: 3}
-      propertyPath: m_Name
-      value: PlaceHolderObstacle
-      objectReference: {fileID: 0}
     - target: {fileID: 1494602890906840477, guid: de9c5fbebd004b746bbeb57c27127cb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3114,6 +3122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494602890906840478, guid: de9c5fbebd004b746bbeb57c27127cb9,
+        type: 3}
+      propertyPath: m_Name
+      value: PlaceHolderObstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de9c5fbebd004b746bbeb57c27127cb9, type: 3}
